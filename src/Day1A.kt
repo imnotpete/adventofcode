@@ -1,7 +1,5 @@
 import java.io.File
 
-// https://adventofcode.com/2021/day/1
-
 fun main() {
 
     var lastDepth = 0;

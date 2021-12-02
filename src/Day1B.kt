@@ -1,8 +1,6 @@
 import java.io.File
 import java.util.*
 
-// https://adventofcode.com/2021/day/1
-
 fun main() {
     val window = LinkedList<Int>();
     var lastSum = 0;
