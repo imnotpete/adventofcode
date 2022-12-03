@@ -12,7 +12,12 @@ def main(filepath):
         else:
             current.append(int(line))
     
-    return max(elf_totals)
+    # get trailing elf if last line is not a newline
+    if len(current) != 0:
+        elf_totals.append(sum(current))
+    
+    sorted_totals = sorted(elf_totals, reverse=True)
+    return sorted_totals
         
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Find the elf with the most total calories")
@@ -20,5 +25,6 @@ if __name__ == '__main__':
 
     args=parser.parse_args()
 
-    top_elf = main(filepath=args.filepath)
-    print(top_elf)
+    sorted_totals = main(filepath=args.filepath)
+    print(f"Top elf: {sorted_totals[0]}")
+    print(f"Top three total: {sum(sorted_totals[:3])}")
